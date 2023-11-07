@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+}
+
+.card {
+  width: 400px;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: #fff;
+  z-index: 2;
+}
+
+.card-back {
+  background-color: #fff;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  color: #000;
+}
+
+p {
+  font-size: 24px;
+  text-align: center;
+  color: #000;
+}
